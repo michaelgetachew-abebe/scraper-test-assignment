@@ -20,7 +20,7 @@ try:
     script_tag = soup.find("script", type="application/ld+json")
     if script_tag:
         product_data = json.loads(script_tag.string)
-
+        print(product_data, "\n")
         product_name = product_data.get("name")
         price = product_data["offers"][0].get("price")
         image = product_data.get("image")
